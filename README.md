@@ -10,3 +10,13 @@ Mobile application of recipes for submission as a final project of the TPRP.
     <li>Save recipes: Users can save recipes they like to their favorites list or create their own recipe collections.</li>
     <li>Create and share recipes: Users can create their own recipes and share them with the CookSnap community. Recipes can include photos, step-by-step instructions, and ingredient lists.</li>
 </ul>
+
+# Technology Used
+
+CookSnap is built using the following technologies:
+<ul>
+    <li>Java: A programming language used for building Android apps</li>
+    <li>Android Studio: An integrated development environment (IDE) for developing Android apps</li>
+    <li>Firebase: A cloud-based platform for building and managing apps</li>
+    <li>Spoonacular API: A food and recipe API that provides access to a large collection of recipes</li>
+</ul>
