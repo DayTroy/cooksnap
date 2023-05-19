@@ -15,8 +15,6 @@ Mobile application of recipes for submission as a final project of the TPRP.
 
 CookSnap is built using the following technologies:
 <ul>
-    <li>Java: A programming language used for building Android apps</li>
-    <li>Android Studio: An integrated development environment (IDE) for developing Android apps</li>
-    <li>Firebase: A cloud-based platform for building and managing apps</li>
-    <li>Spoonacular API: A food and recipe API that provides access to a large collection of recipes</li>
+    <li>Kotlin: A programming language used for building Android apps</li>
+    <li>Visual Studio code: An integrated development environment (IDE) for developing Android apps</li>
 </ul>
