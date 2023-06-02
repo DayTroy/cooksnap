@@ -15,6 +15,7 @@ Mobile application of recipes for submission as a final project of the TPRP.
 
 CookSnap is built using the following technologies:
 <ul>
-    <li>Kotlin: A programming language used for building Android apps</li>
+    <li>JavaScript: A programming language</li>
+    <li>React Native: A JavaScript framework for writing real, natively rendering mobile applications for iOS and Android</li>
     <li>Visual Studio code: An integrated development environment (IDE) for developing Android apps</li>
 </ul>
