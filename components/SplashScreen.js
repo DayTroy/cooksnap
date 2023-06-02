@@ -1,17 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, 
+         Text, 
+         View, 
+         Image, 
+         ActivityIndicator, } from 'react-native';
 import Color from '../assets/themes/Color';
 
-export default function SplashScreen() {
+const SplashScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <Image 
-            source={require('../assets/logos/main-logo.png')}
+            source={require('../assets/images/logos/main-logo.png')}
             style={styles.image}
         />
         <Text style={styles.title}>CookSnap</Text>
         <Text style={styles.description}>A Better Way to Organize Your Recipe</Text>
+        <ActivityIndicator 
+          size="large" 
+          color="#000000" 
+          style= {{marginTop: "20%"}}
+        />
       </View>
     );
   }
@@ -27,14 +34,18 @@ const styles = StyleSheet.create({
       color: Color.Gray1,
       fontSize: 50,
       fontFamily: 'Poppins-SemiBold',
+      marginTop: '15%',
     },
     description: {
         color: Color.Gray1,
         fontSize: 16,
-        fontFamily: 'Poppins-Regular'
+        fontFamily: 'Poppins-Regular',
     },
     image: {
-        width: 91,
-        height: 91,
-    }
+      width: '30%',
+      aspectRatio: 1,
+      marginTop: "25%",
+    }    
   });
+
+  export default SplashScreen;
