@@ -5,7 +5,7 @@ import { StyleSheet,
          ActivityIndicator, } from 'react-native';
 import Color from '../assets/themes/Color';
 
-const SplashScreen = ({ navigation }) => {
+const SplashScreen = () => {
     return (
       <View style={styles.container}>
         <Image 

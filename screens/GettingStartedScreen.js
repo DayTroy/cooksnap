@@ -4,11 +4,13 @@ import { View,
          StyleSheet, 
          Text, 
          Image, 
-         TouchableOpacity, 
          Dimensions } from 'react-native';
 import Color from '../assets/themes/Color';
+import { useNavigation } from '@react-navigation/native';
+import CustomButton from '../components/CustomButton';
 
 const GettingStartedScreen = () => {
+  const navigation = useNavigation();
   return (
     <ImageBackground  
         source={require('../assets/images/background/started-background.png')}
@@ -27,14 +29,11 @@ const GettingStartedScreen = () => {
             <Text style={styles.title}>Get Cooking</Text>
             <Text style={styles.description}>Simple way to find Tasty Recipe</Text>
           </View>
-          
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Start Cooking</Text>
-            <Image 
-              source={require('../assets/images/icons/arrow-right.svg')}
-              style={styles.icon}
-            />
-          </TouchableOpacity>
+          <CustomButton 
+                  style={styles.button} 
+                  onPress={() => navigation.navigate('SignInScreen')}
+                  buttonText="Start Cooking"
+          />
         </View>
     </ImageBackground>
   );
@@ -85,21 +84,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Color.Primary100,
-    borderRadius: 10,
     marginTop: 0.15 * width,
     width: buttonWidth,
     paddingVertical: 15,
   },
-  buttonText: {
-    color: Color.White,
-    fontSize: 0.04 * width, 
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-SemiBold',
-  },
   icon: {
-    width: 20,
-    height: 20,
     marginLeft: 10,
   },
 });
