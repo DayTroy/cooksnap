@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, View, Dimensions } from 'react-native';
 import Color from '../assets/themes/Color';
 
-const InputField = ({ inputName, inputPlaceholder }) => {
+const InputField = ({ inputName, inputPlaceholder, onChangeText  }) => {
   const { width } = Dimensions.get('window');
   const inputWidth = width - 60; // Уменьшаем ширину поля на 60 пикселей для отступов
 
@@ -12,6 +12,7 @@ const InputField = ({ inputName, inputPlaceholder }) => {
       <TextInput
         style={[styles.input__placeholder, { width: inputWidth }]}
         placeholder={inputPlaceholder}
+        onChangeText={onChangeText}
       />
     </View>
   );
