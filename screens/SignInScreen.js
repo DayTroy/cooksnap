@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text, Dimensions, TouchableOpacity } from "react-native";
 import InputField from '../components/InputField';
 import CustomButton from '../components/CustomButton';
 import Color from '../assets/themes/Color';
 import { useNavigation } from '@react-navigation/native';
+import { auth } from '../firebase';
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 
 const SignInScreen = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const navigation = useNavigation();
+
+
+  useEffect(() => {
+    const unsubscribe =  onAuthStateChanged(auth, user=>{
+      if (user){
+        navigation.replace("HomeScreen")
+      }
+    })
+    return unsubscribe
+  }, [])
+
+
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log('Logged in with:', user.email)
+    })
+    .catch(error => alert(error.message))
+  }
 
   return (
     <View style={styles.container}>
@@ -36,6 +60,7 @@ const SignInScreen = () => {
       <CustomButton 
         style={styles.button}
         buttonText="Sign In"
+        onPress={handleSignIn}
       />
     </View>
   );
