@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const delay = setTimeout(() => {
       setShowSplash(false);
-    }, 5000);
+    }, 0);
 
     return () => clearTimeout(delay);
   }, []);
