@@ -6,6 +6,7 @@ import SplashScreen from './screens/SplashScreen';
 import GettingStartedScreen from './screens/GettingStartedScreen';
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
+import HomeScreen from './screens/HomeScreen';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
   useEffect(() => {
     const delay = setTimeout(() => {
       setShowSplash(false);
-    }, 0);
+    }, 2000);
 
     return () => clearTimeout(delay);
   }, []);
@@ -52,6 +53,11 @@ const App = () => {
             <Stack.Screen 
               name="SignUpScreen" 
               component={SignUpScreen} 
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+              name="HomeScreen" 
+              component={HomeScreen} 
               options={{ headerShown: false }}
             />
           </>
