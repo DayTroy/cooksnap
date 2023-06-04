@@ -15,7 +15,11 @@ Mobile application of recipes for submission as a final project of the TPRP.
 
 CookSnap is built using the following technologies:
 <ul>
-    <li>JavaScript: A programming language</li>
-    <li>React Native: A JavaScript framework for writing real, natively rendering mobile applications for iOS and Android</li>
-    <li>Visual Studio code: An integrated development environment (IDE) for developing Android apps</li>
+    <li>JavaScript: The programming language used for building the logic and functionality of the app.</li>
+    <li>React Native: A JavaScript framework for building native mobile apps.</li>
+    <li>React Navigation: A library for implementing navigation and routing in React Native apps, used for creating navigation flows between screens.</li>
+    <li>Firebase: A platform by Google that provides backend services like authentication, real-time database, and cloud storage.</li>
+    <li>Firebase Authentication: Firebase's service for user authentication, allowing users to sign up, sign in, and manage their account credentials.</li>
+    <li>Expo: A set of tools and services for developing and deploying React Native apps, providing a simplified development workflow.</li>
+    <li>Visual Studio Code: A popular code editor with features that enhance productivity and simplify code development.</li>
 </ul>
