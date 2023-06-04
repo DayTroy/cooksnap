@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "cooksnap",
+    "name": "CookSnap",
     "slug": "cooksnap",
+    "description": "This is an educative project - recipe application",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logos/main-logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/main-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
