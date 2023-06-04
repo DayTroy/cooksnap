@@ -91,6 +91,9 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Regular",
     fontSize: 20,
   },
+  input: {
+    maxWidth: 250,
+  },
   new__account: {
     color: Color.Black,
     fontFamily: "Poppins-Regular",
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
     marginTop: 0.05 * width,
     width: buttonWidth,
     paddingVertical: 15,
+    maxWidth: 250,
   },
 });
 

@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
+    maxWidth: 250,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
