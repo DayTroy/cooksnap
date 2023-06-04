@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   View,
@@ -19,11 +19,21 @@ const SignUpScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const [passwordMatch, setPasswordMatch] = useState(true);
 
   const navigation = useNavigation();
 
+  const handlePasswordMatch = () => {
+    setPasswordMatch(password === confirmedPassword);
+  };
+
   const handleSignUp = () => {
+    handlePasswordMatch();
+
+    if (!passwordMatch) {
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
@@ -71,6 +81,9 @@ const SignUpScreen = () => {
           inputPlaceholder="Retype Password"
           onChangeText={(password) => setConfirmedPassword(password)}
         />
+        {!passwordMatch && (
+          <Text style={styles.errorText}>Passwords do not match</Text>
+        )}
         <CustomButton
           style={styles.button}
           buttonText="Sign Up"
@@ -127,6 +140,11 @@ const styles = StyleSheet.create({
     marginTop: 0.05 * width,
     width: buttonWidth,
     paddingVertical: 15,
+  },
+  errorText: {
+    color: "red",
+    marginTop: 5,
+    textAlign: "center",
   },
 });
 

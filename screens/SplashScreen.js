@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
       width: '30%',
       aspectRatio: 1,
       marginTop: "25%",
-    }    
+      
+    },
   });
 
   export default SplashScreen;
