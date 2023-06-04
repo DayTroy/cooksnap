@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   ScrollView,
   View,
@@ -6,19 +6,19 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
-} from "react-native";
-import InputField from "../components/InputField";
-import CustomButton from "../components/CustomButton";
-import Color from "../assets/themes/Color";
-import { useNavigation } from "@react-navigation/native";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase";
+} from 'react-native';
+import InputField from '../components/InputField';
+import CustomButton from '../components/CustomButton';
+import Color from '../assets/themes/Color';
+import { useNavigation } from '@react-navigation/native';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const SignUpScreen = () => {
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmedPassword, setConfirmedPassword] = useState("");
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmedPassword, setConfirmedPassword] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
 
   const navigation = useNavigation();
@@ -40,6 +40,7 @@ const SignUpScreen = () => {
         updateProfile(user, {
           displayName: userName,
         });
+        navigation.replace('Home');
       })
       .catch((error) => alert(error.message));
   };
@@ -70,6 +71,7 @@ const SignUpScreen = () => {
         <InputField
           style={styles.input}
           value={password}
+          secureTextEntry={true}
           inputName="Password"
           inputPlaceholder="Enter Password"
           onChangeText={(password) => setPassword(password)}
@@ -77,6 +79,7 @@ const SignUpScreen = () => {
         <InputField
           style={styles.input}
           value={confirmedPassword}
+          secureTextEntry={true}
           inputName="Confirmed Password"
           inputPlaceholder="Retype Password"
           onChangeText={(password) => setConfirmedPassword(password)}
@@ -89,7 +92,7 @@ const SignUpScreen = () => {
           buttonText="Sign Up"
           onPress={handleSignUp}
         />
-        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
           <Text style={styles.new__account}>Already a member? Sign In</Text>
         </TouchableOpacity>
       </View>
@@ -97,54 +100,54 @@ const SignUpScreen = () => {
   );
 };
 
-const { width } = Dimensions.get("window");
+const { width } = Dimensions.get('window');
 const buttonWidth = width - 60;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Color.White,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   header: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   header__title: {
-    fontFamily: "Poppins-SemiBold",
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 30,
     marginTop: 30,
   },
   header__subtitle: {
-    fontFamily: "Poppins-Regular",
+    fontFamily: 'Poppins-Regular',
     fontSize: 20,
     marginTop: 10,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: 20,
   },
   new__account: {
     color: Color.Black,
-    fontFamily: "Poppins-Regular",
+    fontFamily: 'Poppins-Regular',
     fontSize: 11,
     marginTop: 20,
     marginBottom: 20,
-    textAlign: "center",
+    textAlign: 'center',
   },
   button: {
     maxWidth: 250,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 0.05 * width,
     width: buttonWidth,
     paddingVertical: 15,
   },
   errorText: {
-    color: "red",
+    color: 'red',
     marginTop: 5,
-    textAlign: "center",
+    textAlign: 'center',
   },
 });
 

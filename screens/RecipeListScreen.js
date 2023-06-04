@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import { Card, Paragraph } from 'react-native-paper';
 import { useState, useEffect } from 'react';
 import CustomSearchBar from '../components/CustomSearchBar';
+
 const RecipeListScreen = () => {
 
   const [meals, setMeals] = useState([]);

@@ -21,7 +21,7 @@ const ProfileScreen = () => {
       <Text style={[styles.profile__text, {fontSize: 30}]}>Profile</Text>
       <Image 
             style={styles.profile__image}
-            source={require('../assets/images/background/started-background.png')}
+            source={require('../assets/images/background/black-rose.jpg')}
 
       />
       <Text style={styles.profile__text}>{auth.currentUser?.displayName}</Text>
