@@ -9,15 +9,18 @@ const RecipeListScreen = () => {
   const  [searchQuery, setSearchQuery] = useState('');
   const url ="https://www.themealdb.com/api/json/v1/1/categories.php";
  
-  const getMeals = async () =>{
-   const response = await fetch(url);
-   const data = await response.json();
-    setMeals(data.categories);
-    
-  }
-   useEffect(()=>{
-     getMeals();
-   },[])
+  const getMeals = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const filteredMeals = data.categories.filter(meal =>
+      meal.strCategory.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setMeals(filteredMeals);
+  };
+
+  useEffect(() => {
+    getMeals();
+  }, [searchQuery]);  
  
    const onChangeSearch = query =>setSearchQuery(query);
 
@@ -33,7 +36,7 @@ const RecipeListScreen = () => {
       <ScrollView>
         {
           meals.map(meal=>(
-            <Card key={meal.idCategory}>
+            <Card style={styles.recipe} key={meal.idCategory}>
               <Card.Cover source={meal.strCategoryThumb} />
               <Card.Title title={meal.strCategory} titleStyle={styles.recipe__title}/>
               <Card.Content >
@@ -64,6 +67,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontFamily: 'Poppins-Regular',
 
+  },
+  recipe:{
+    marginTop: 30,
+    marginLeft: 20,
+    marginRight: 20,
   },
   recipe__title: {
     fontFamily: 'Poppins-SemiBold',
