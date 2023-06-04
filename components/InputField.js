@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TextInput, Text, View, Dimensions } from 'react-native';
 import Color from '../assets/themes/Color';
 
-const InputField = ({ inputName, inputPlaceholder, onChangeText  }) => {
+const InputField = ({ inputName, inputPlaceholder, onChangeText }) => {
   const { width } = Dimensions.get('window');
-  const inputWidth = width - 60; // Уменьшаем ширину поля на 60 пикселей для отступов
+  const inputWidth = width - 60;
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.input__name}>{inputName}</Text>
       <TextInput
-        style={[styles.input__placeholder, { width: inputWidth }]}
+        style={[
+          styles.input__placeholder,
+          { width: inputWidth },
+          isFocused && styles.input__textFocused,
+        ]}
         placeholder={inputPlaceholder}
         onChangeText={onChangeText}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
     </View>
   );
@@ -36,6 +51,9 @@ const styles = StyleSheet.create({
     borderColor: Color.Gray4,
     borderRadius: 10,
     padding: 15,
+  },
+  input__textFocused: {
+    color: Color.Black,
   },
 });
 
