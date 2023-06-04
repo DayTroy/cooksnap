@@ -22,7 +22,7 @@ const SignInScreen = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigation.replace("ProfileScreen");
+        navigation.replace("RecipeListScreen");
       }
     });
     return unsubscribe;
@@ -32,7 +32,6 @@ const SignInScreen = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("Logged in with:", user.email);
       })
       .catch((error) => alert(error.message));
   };
@@ -91,6 +90,9 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Regular",
     fontSize: 20,
   },
+  input: {
+    maxWidth: 250,
+  },
   new__account: {
     color: Color.Black,
     fontFamily: "Poppins-Regular",
@@ -107,6 +109,7 @@ const styles = StyleSheet.create({
     marginTop: 0.05 * width,
     width: buttonWidth,
     paddingVertical: 15,
+    maxWidth: 250,
   },
 });
 

@@ -21,7 +21,7 @@ const InputField = ({ inputName, inputPlaceholder, onChangeText }) => {
       <TextInput
         style={[
           styles.input__placeholder,
-          { width: inputWidth },
+          { width: inputWidth, maxWidth: 250 },
           isFocused && styles.input__textFocused,
         ]}
         placeholder={inputPlaceholder}
