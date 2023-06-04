@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     borderColor: Color.Gray4,
     borderRadius: 10,
     padding: 15,
+    outlineWidth: 0,
   },
   input__textFocused: {
     color: Color.Black,

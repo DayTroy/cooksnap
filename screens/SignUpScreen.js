@@ -89,7 +89,7 @@ const SignUpScreen = () => {
           buttonText="Sign Up"
           onPress={handleSignUp}
         />
-        <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
           <Text style={styles.new__account}>Already a member? Sign In</Text>
         </TouchableOpacity>
       </View>

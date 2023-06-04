@@ -22,7 +22,7 @@ const SignInScreen = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigation.replace("RecipeListScreen");
+        navigation.replace("RecipeList");
       }
     });
     return unsubscribe;
@@ -56,7 +56,7 @@ const SignInScreen = () => {
         inputPlaceholder="Enter Password"
         onChangeText={(password) => setPassword(password)}
       />
-      <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")}>
+      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
         <Text style={styles.new__account}>Don’t have an account? Sign up</Text>
       </TouchableOpacity>
       <CustomButton

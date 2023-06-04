@@ -12,7 +12,7 @@ const ProfileScreen = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigation.replace("SignInScreen");
+        navigation.navigate("SignIn");
       })
       .catch((error) => alert(error.message));
   };

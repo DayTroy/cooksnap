@@ -31,7 +31,7 @@ const GettingStartedScreen = () => {
           </View>
           <CustomButton 
                   style={styles.button} 
-                  onPress={() => navigation.navigate('SignInScreen')}
+                  onPress={() => navigation.navigate('SignIn')}
                   buttonText="Start Cooking"
           />
         </View>
