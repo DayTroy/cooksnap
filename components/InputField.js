@@ -28,6 +28,8 @@ const InputField = ({ inputName, inputPlaceholder, onChangeText }) => {
         onChangeText={onChangeText}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        secureTextEntry={inputName === 'Password' 
+        || inputName === 'Confirmed Password'}
       />
     </View>
   );

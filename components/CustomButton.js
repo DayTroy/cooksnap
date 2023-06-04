@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         color: Color.White,
         fontWeight: 'bold',
         fontFamily: 'Poppins-SemiBold',
-      },
+    },
 })
 
 export default CustomButton;
