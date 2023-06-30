@@ -2,7 +2,7 @@
 CookSnap is a mobile application that helps users find recipes for a variety of dishes. With CookSnap, users can browse through a database of recipes, search for specific dishes or ingredients, save their favorite recipes for later, and even create their own recipe collections.
 Mobile application of recipes for submission as a final project of the TPRP.
 
-![image](https://user-images.githubusercontent.com/70051506/222495992-8f9699d0-b112-4734-9c18-eac62e1c061e.png)
+![image](https://github.com/DayTroy/cooksnap/assets/70051506/105f998f-af4a-4e10-8e5a-707ff1606e9d)
 # Features
 <ul>
     <li>Browse recipes: Users can browse through a collection of recipes curated by CookSnap's team of food experts. Recipes are organized by category, cuisine, and dietary preferences.</li>
